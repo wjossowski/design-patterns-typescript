@@ -1,0 +1,16 @@
+{
+  "name": "generator-new-module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "slug": "^1.1.0",
+    "yeoman-generator": "^4.2.0"
+  },
+  "files": [
+    "generators"
+  ]
+}

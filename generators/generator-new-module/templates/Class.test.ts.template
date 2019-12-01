@@ -1,0 +1,8 @@
+import { <%= className %> } from './<%= className %>'
+
+describe('<%= className %> test suite', () => {
+  it('should instantiate', () => {
+    const newOne = new <%= className %>
+    expect(false).toEqual(true)
+  })
+})
