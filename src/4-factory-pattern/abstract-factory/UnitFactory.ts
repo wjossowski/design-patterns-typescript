@@ -1,32 +1,10 @@
-import { Unit } from './Unit'
-import { UnitData } from '../factory-method/Unit'
+import { InfantryUnit } from './InfrantryUnit'
+import { MechanizedUnit } from './MechanizedUnit'
 
-export type UnitType = 'Rifleman' | 'Tank'
-
-type UnitConstructorType = {
-  new (...args: any): Unit
-}
-
-type UnitRecord = {
-  UnitConstructor: UnitConstructorType
-  data: UnitData
-}
+export type InfantryUnitType = 'Rifleman'
+export type MechanizedUnitType = 'Tank'
 
 export abstract class UnitFactory {
-  protected readonly unitConstructors: Map<string, UnitRecord> = new Map()
-
-  public registerType(type: UnitType, record: UnitRecord) {
-    this.unitConstructors.set(type, record)
-  }
-
-  public createUnit(type: UnitType): Unit {
-    const record = this.unitConstructors.get(type)
-    if (!record) {
-      throw new Error('Missing Unit type')
-    }
-
-    const { UnitConstructor, data } = record
-
-    return new UnitConstructor(data.hp, data.damage, data.defense)
-  }
+  public abstract createInfantryUnit(type: InfantryUnitType): InfantryUnit
+  public abstract createMechanizedUnit(type: MechanizedUnitType): MechanizedUnit
 }

@@ -1,11 +1,8 @@
-import { Unit } from './Unit'
-import { UnitType } from './UnitFactory'
+import { InfantryUnit } from './InfrantryUnit'
 
-export class RifflemanUnit extends Unit {
-  public readonly type: UnitType = 'Rifleman'
-
-  constructor(hp: number, damage: number, defense: number) {
-    super(hp, damage, defense)
+export class RifflemanUnit extends InfantryUnit {
+  constructor(hp: number, damage: number, defense: number, color: string) {
+    super(hp, damage, defense, color)
   }
 
   public move(): void {
